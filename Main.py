@@ -5,8 +5,8 @@ from email.mime.base import MIMEBase
 from email import encoders
 import OP
 
-mail_content = '''Hej,
-Jeg kunne godt tænke mig en Praktikplads hos jer.
+mail_content = '''
+Your Meseges here
 '''
 
 # Din Email og kode ord og den som skal modtage din email
@@ -17,11 +17,11 @@ receiver_address = "Receiver-email" #the receiver email here
 message = MIMEMultipart()
 message['From'] = sender_address
 message['To'] = receiver_address
-message['Subject'] = 'Praktikplads'
+message['Subject'] = 'Your_Subject_HERE'
 # Subject lillen
 #body og den fil du skal sende
 message.attach(MIMEText(mail_content, 'Plain'))
-attach_file_name = 'ansøning - cv - Mikkel Kronborg.pdf'
+attach_file_name = 'The_Attach_file_name_HERE' #you need to add the filename here whit the test.txt or what the file type is
 attach_file = open(attach_file_name, 'rb')
 payload = MIMEBase('application', 'octate-stream')
 payload.set_payload((attach_file).read())
